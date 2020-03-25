@@ -1,13 +1,14 @@
 import React from 'react';
 import './homepage.styles.scss';
 
+import Clock from '../../components/clock/clock.component';
 import Stocks from '../../components/stocks/stocks.component';
 import Weather from '../../components/weather/weather.component';
 
 const HomePage = () => {
   return (
     <div className="homepage">
-      <h2>Home Page</h2>
+      <Clock />
       <Stocks />
       <Weather />
     </div>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import './stocks.styles.scss';
 
 
@@ -61,9 +62,17 @@ const Stocks = () => {
     return setPortfolio(promise);
   };
 
+  useEffect(() => {
+    getFullPortfolio(myPortfolio);
+    const interval = setInterval(() => {
+      getFullPortfolio(myPortfolio);
+    }, 2 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="stocks">
-      <button onClick={() => getFullPortfolio(myPortfolio)}>Get Stocks</button>
+      {/* <button onClick={() => getFullPortfolio(myPortfolio)}>Get Stocks</button> */}
       <table>
         <thead>
           <tr>
@@ -73,7 +82,6 @@ const Stocks = () => {
             <th>OPEN</th>
             <th>HIGH</th>
             <th>LOW</th>
-            <th>DATE</th>
             {/* {Object.keys(portfolio[0]).map(item =>
               <th key={item}>{item.slice(4).toUpperCase()}</th>
             )} */}
@@ -91,7 +99,6 @@ const Stocks = () => {
                   <td>{parseFloat(security["02. open"]).toFixed(2)}</td>
                   <td>{parseFloat(security["03. high"]).toFixed(2)}</td>
                   <td>{parseFloat(security["04. low"]).toFixed(2)}</td>
-                  <td>{parseFloat(security["07. latest trading day"])}</td>
                   {/* {Object.values(security).map(item => (
                   item ? <td key={security.symbol + item}>{item}</td> : null
                 ))} */}
