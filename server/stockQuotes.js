@@ -3,9 +3,9 @@ const cheerio = require('cheerio');
 
 // Method for scraping html
 (async () => {
-  process.stdout.write("Getting Hourly Weather Table \n")
+  process.stdout.write("Getting Stock Quotes \n")
   try {
-    const res = await axios.get(`https://weather.com/weather/hourbyhour/l/9daa87422b7576dfacc1662c3003e3d12500c4f33c57ab7fd9c53196db7c0b0f`);
+    const res = await axios.get(`https://www.marketwatch.com/investing/stock/MSFT`);
     if (res.status === 200) {
       const $ = cheerio.load(res.data)
       const hourlyWeatherData = {
