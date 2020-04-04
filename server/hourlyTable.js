@@ -27,7 +27,7 @@ const cheerio = require('cheerio');
         obj.wind = `${$(element).find('.wind').text()}`
         hourlyWeatherData.data.push(obj);
       });
-      console.log(hourlyWeatherData);
+      console.table(hourlyWeatherData.data);
     }
   } catch (error) {
     console.error(error);
