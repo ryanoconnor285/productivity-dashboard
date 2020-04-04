@@ -1,0 +1,38 @@
+.basic-grid {
+  height: 100vh;
+  display: grid;
+  gap: 1rem;
+
+  grid-template-areas:
+    'clock weather weather'
+    'stock stock blank'
+    'cal cal cal'
+    'cal cal cal'
+    'cal cal cal'
+    'cal cal cal';
+    
+    grid-template-rows: repeat(5, 20%);
+
+    grid-template-columns: 340px 340px 340px;
+
+    .card:nth-child(1) {
+      grid-area: clock;
+    }
+
+    .card:nth-child(2) {
+      grid-area: weather;
+    }
+
+    .card:nth-child(3) {
+      grid-area: stock;
+    }
+
+    .card:nth-child(4) {
+      grid-area: cal;
+    }
+    
+}
+
+table {
+  width: 100%;
+}
