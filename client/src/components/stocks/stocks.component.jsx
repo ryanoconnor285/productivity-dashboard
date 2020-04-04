@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import cheerio from 'cheerio';
 import axios from 'axios';
 
 import './stocks.styles.scss';
+
 
 const Stocks = () => {
   const [portfolio, setPortfolio] = useState([
@@ -53,7 +53,7 @@ const Stocks = () => {
     return security;
   };
 
-  const getFullPortfolio = async (myPortfolio) => {
+  const getFullPortfolio = async (portfolio) => {
     const fullPortfolio = portfolio.map(security => {
       return getPortfolioData(security);
     });

@@ -7,11 +7,9 @@
     'clock weather weather'
     'stock stock blank'
     'cal cal cal'
-    'cal cal cal'
-    'cal cal cal'
     'cal cal cal';
     
-    grid-template-rows: repeat(5, 20%);
+    grid-template-rows: repeat(4, 25%);
 
     grid-template-columns: 340px 340px 340px;
 
