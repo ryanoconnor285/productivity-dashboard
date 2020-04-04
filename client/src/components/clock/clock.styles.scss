@@ -1,0 +1,9 @@
+.clock {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  justify-items: center;
+}
+.current-time {
+  margin-top: 75px;
+}
