@@ -9,7 +9,7 @@ const Clock = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTime(moment().format('h:mm a'));
+      setCurrentTime(moment().format('h:mm'));
       setCurrentDate(moment().format('dddd, MMMM Do'));
     }, 1000);
     return () => clearInterval(interval);
