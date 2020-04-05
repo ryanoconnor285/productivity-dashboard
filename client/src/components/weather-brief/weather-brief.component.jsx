@@ -25,6 +25,7 @@ const WeatherBrief = () => {
           description: description,
           feels: feels
         })
+        console.log(weatherBrief);
       }
     } catch (error) {
       console.error(error);
@@ -35,7 +36,7 @@ const WeatherBrief = () => {
     getWeather();
     const interval = setInterval(() => {
       getWeather();
-    }, 60 * 60 * 1000);
+    }, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
