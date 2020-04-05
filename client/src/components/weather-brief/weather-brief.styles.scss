@@ -1,4 +1,15 @@
-.weather-brief {
-  display: grid;
+.weather-headline {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
   margin-top: 60px;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.current-weather {
+  font-size: 32px;
 }
