@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import "./calendar-monthly.styles.scss";
 import moment from 'moment'
 
 const CalendarMonthly = () => {
