@@ -7,8 +7,7 @@ import './weather-hourly.styles.scss';
 const WeatherHourly = () => {
   const [hourly, setHourly] = useState({ headers: [], data: [] });
 
-  useEffect(() => {
-    (async () => {
+  const getWeather = async () => {
       try {
         const res = await axios.get(`https://weather.com/weather/hourbyhour/l/9daa87422b7576dfacc1662c3003e3d12500c4f33c57ab7fd9c53196db7c0b0f`);
         if (res.status === 200) {
@@ -37,8 +36,15 @@ const WeatherHourly = () => {
       } catch (error) {
         console.error(error);
       }
-    })()
-  }, [])
+  }
+
+  useEffect(() => {
+    getWeather();
+    const interval = setInterval(() => {
+      getWeather();
+    }, 60 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="weather-hourly">
