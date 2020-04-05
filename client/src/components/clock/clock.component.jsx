@@ -4,12 +4,12 @@ import moment from 'moment';
 import './clock.styles.scss';
 
 const Clock = () => {
-  const [currentTime, setCurrentTime] = useState(moment().format('h:mm:ss a'))
+  const [currentTime, setCurrentTime] = useState(moment().format('h:mm'))
   const [currentDate, setCurrentDate] = useState(moment().format('dddd, MMMM Do'))
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTime(moment().format('h:mm:ss a'));
+      setCurrentTime(moment().format('h:mm a'));
       setCurrentDate(moment().format('dddd, MMMM Do'));
     }, 1000);
     return () => clearInterval(interval);
@@ -18,7 +18,7 @@ const Clock = () => {
   return (
     <div className="clock">
       <div className="current-time"><h1>{currentTime}</h1></div>
-      <div><h5>{`${currentDate}`}</h5></div>
+      <div><h2>{`${currentDate}`}</h2></div>
     </div>
   )
 };
