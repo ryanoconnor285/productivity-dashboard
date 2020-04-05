@@ -3,6 +3,7 @@ import cheerio from 'cheerio';
 import axios from 'axios';
 
 import './weather-hourly.styles.scss';
+import WeatherIcon from '../weather-icon/weather-icon.component';
 
 const WeatherHourly = () => {
   const [hourly, setHourly] = useState({ headers: [], data: [] });
@@ -50,7 +51,10 @@ const WeatherHourly = () => {
     <div className="weather-hourly">
       {hourly.data.map(item =>
         <div className="hour" key={item.time}>
-            {Object.values(item).map((value, index) => <h5 key={`${item.time}-${value}`}>{value}</h5>)}
+            <h3>{item.time}</h3>
+            <h3>{item.description !== '' ? <WeatherIcon description={item.description}/> : null}</h3>
+            <h3>{item.temp}</h3>
+            <h3>{item.precip} {<WeatherIcon description={"Umbrella"}/>}</h3>
         </div>
       )}
     </div>
