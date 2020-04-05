@@ -42,7 +42,7 @@ const WeatherHourly = () => {
     getWeather();
     const interval = setInterval(() => {
       getWeather();
-    }, 60 * 60 * 1000);
+    }, 15 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
