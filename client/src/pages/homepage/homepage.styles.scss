@@ -1,7 +1,15 @@
 .basic-grid {
   height: 100vh;
+  width: 100%;
   display: grid;
-  gap: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  grid-gap: 1rem;
+  overflow: hidden;
+  z-index: 1;
+  background-color: rgba(55, 55, 55, 0.5);
+  text-shadow: 2px 2px 2px #000;
 
   grid-template-areas:
     'clock weather weather'
@@ -9,9 +17,9 @@
     'cal cal cal'
     'cal cal cal';
     
-    grid-template-rows: repeat(4, 25%);
+    grid-template-rows: repeat(4, 1fr);
 
-    grid-template-columns: 340px 340px 340px;
+    grid-template-columns: repeat(3, 1fr);
 
     .card:nth-child(1) {
       grid-area: clock;
@@ -33,4 +41,13 @@
 
 table {
   width: 100%;
+}
+
+#background-image {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
