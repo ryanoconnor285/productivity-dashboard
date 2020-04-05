@@ -8,12 +8,12 @@
   grid-gap: 1rem;
   overflow: hidden;
   z-index: 1;
-  background-color: rgba(55, 55, 55, 0.5);
+  // background-color: rgba(55, 55, 55, 0.5);
   text-shadow: 2px 2px 2px #000;
 
   grid-template-areas:
     'clock weather weather'
-    'stock stock blank'
+    'stock stock stock'
     'cal cal cal'
     'cal cal cal';
     

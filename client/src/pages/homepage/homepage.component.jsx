@@ -3,6 +3,7 @@ import './homepage.styles.scss';
 
 import City from '../../assets/background/city-sunshards.jpg';
 import Milkyway from '../../assets/background/milkyway-night.jpg';
+import BlueBeach from '../../assets/background/blue-beach.jpg';
 
 import Clock from '../../components/clock/clock.component';
 import Stocks from '../../components/stocks/stocks.component';
@@ -12,7 +13,7 @@ import CalendarMonthly from '../../components/calendar-monthly/calendar-monthly.
 const HomePage = () => {
   return (
     <div>
-      <img src={Milkyway} id="background-image"/>
+      <img src={BlueBeach} id="background-image"/>
       <section className="basic-grid">
         <div className="card"><Clock /></div>
         <div className="card"><WeatherBrief /></div>
