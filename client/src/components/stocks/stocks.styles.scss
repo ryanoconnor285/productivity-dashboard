@@ -1,6 +1,12 @@
 .stocks {
   margin-top: 35px;
   table {
-    text-align:center; 
+    text-align: center; 
+    border-spacing: 0.5rem;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 1rem;
+    }
   }
 }
