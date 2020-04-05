@@ -1,13 +1,12 @@
 .clock {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .current-time {
-  margin-top: 75px;
   h1 {
-    font-size: 64px;
+    font-size: 96px;
     font-weight: bold;
   }
 }
