@@ -25,6 +25,8 @@ const WeatherIcon = ({ description }) => {
         return setIcon(Sunny);
       case 'Mostly Sunny':
         return setIcon(PartlyCloudy);
+      case 'Mostly Cloudy':
+        return setIcon(Cloudy);
       case 'Partly Cloudy':
         return setIcon(Cloudy);
       case 'Cloudy':

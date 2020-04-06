@@ -25,7 +25,7 @@ const WeatherBrief = () => {
         const temperature = $('.today_nowcard-section').find('.today_nowcard-temp').text()
         const description = $('.today_nowcard-section').find('.today_nowcard-phrase').text()
         const feels = $('.today_nowcard-section').find('.today_nowcard-feels').text()
-        const hilo = `L ${$('.daypart-0 .today-daypart-temp').find('span').text()} / H ${$('.daypart-1 .today-daypart-temp').find('span').text()}`
+        const hilo = `${$('.daypart-0 .today-daypart-temp').find('span').text()}/ ${$('.daypart-1 .today-daypart-temp').find('span').text()}`
         const sunrise = $('#dp0-details-sunrise').text()
         const sunset = $('#dp0-details-sunset').text()
         setWeatherBrief({
