@@ -19,13 +19,17 @@ const WeatherIcon = ({ description }) => {
     switch (description) {
       case 'Clear':
         return setIcon(Clear);
+      case 'Mostly Clear':
+        return setIcon(Clear);
       case 'Sunny':
         return setIcon(Sunny);
       case 'Mostly Sunny':
         return setIcon(PartlyCloudy);
       case 'Partly Cloudy':
-        return setIcon(PartlyCloudy);
+        return setIcon(Cloudy);
       case 'Cloudy':
+        return setIcon(Cloudy);
+      case 'Fair':
         return setIcon(Cloudy);
       case 'Showers':
         return setIcon(Rain);
