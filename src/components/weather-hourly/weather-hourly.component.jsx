@@ -3,7 +3,7 @@ import cheerio from 'cheerio';
 import axios from 'axios';
 
 import './weather-hourly.styles.scss';
-import WeatherIcon from '../weather-icon/weather-icon.component';
+// import WeatherIcon from '../weather-icon/weather-icon.component';
 
 const WeatherHourly = () => {
   const [hourly, setHourly] = useState({ headers: [], data: [] });
@@ -17,7 +17,7 @@ const WeatherHourly = () => {
             headers: [],
             data: []
           }
-          $('.twc-table thead tr th').each((index, element) => {
+          $('.twc-table thead tr th').each(element => {
             hourlyWeatherData.headers.push(($(element).text()))
           });
           $('.twc-table tbody tr').each((index, element) => {
@@ -51,10 +51,12 @@ const WeatherHourly = () => {
     <div className="weather-hourly">
       {hourly.data.map(item =>
         <div className="hour" key={item.time}>
-            <h3>{item.time}</h3>
-            <h3>{item.description !== '' ? <WeatherIcon description={item.description}/> : null}</h3>
+            <h3>{item.time.replace(`:00 `, '')}</h3>
+            <h3>{item.description}</h3>
+            {/* <h3>{item.description !== '' ? <WeatherIcon description={item.description}/> : null}</h3> */}
             <h3>{item.temp}</h3>
-            <h3>{item.precip} {<WeatherIcon description={"Umbrella"}/>}</h3>
+            <h3>{item.precip}</h3>
+            {/* <h3>{item.precip} {<WeatherIcon description={"Umbrella"}/>}</h3> */}
         </div>
       )}
     </div>

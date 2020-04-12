@@ -1,9 +1,8 @@
 import React from 'react';
 import './homepage.styles.scss';
 
-import City from '../../assets/background/city-sunshards.jpg';
-import Milkyway from '../../assets/background/milkyway-night.jpg';
-import BlueBeach from '../../assets/background/blue-beach.jpg';
+// import BlueBeach from '../../assets/background/blue-beach.jpg';
+import BeachVideo from '../../assets/background/video/beach-video.mp4';
 
 import Clock from '../../components/clock/clock.component';
 import Stocks from '../../components/stocks/stocks.component';
@@ -13,7 +12,12 @@ import CalendarMonthly from '../../components/calendar-monthly/calendar-monthly.
 const HomePage = () => {
   return (
     <div>
-      <img src={BlueBeach} id="background-image"/>
+      <div className="fullscreen-image-wrapper">
+        {/* <img src={BlueBeach} alt="background" id="background-image"/> */}
+      </div>
+      <div className="fullscreen-video-wrapper">
+        <video src={BeachVideo} autoPlay={true} loop={true} id="background-video"></video>
+      </div>
       <section className="basic-grid">
         <div className="card"><Clock /></div>
         <div className="card"><WeatherBrief /></div>

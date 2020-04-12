@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './weather-brief.styles.scss';
 import WeatherHourly from '../weather-hourly/weather-hourly.component';
-import WeatherIcon from '../weather-icon/weather-icon.component';
+// import WeatherIcon from '../weather-icon/weather-icon.component';
 
 const WeatherBrief = () => {
   const [weatherBrief, setWeatherBrief] = useState({
@@ -54,7 +54,7 @@ const WeatherBrief = () => {
   return (
     <div className="weather-brief">
       <div className="weather-headline">
-        <div>{weatherBrief.description !== '' ? <WeatherIcon description={weatherBrief.description}/> : null}</div>
+        {/* <div>{weatherBrief.description !== '' ? <WeatherIcon description={weatherBrief.description}/> : null}</div> */}
         <div><h1 className="current-weather">{weatherBrief.temperature} {weatherBrief.description}</h1><h4>{weatherBrief.feels}</h4></div>
         <div>
           <h4>{weatherBrief.hilo}</h4>

@@ -1,12 +1,43 @@
+@import "../../main.scss";
+
 .clock {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  @include lg {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
+
 .current-time {
   h1 {
-    font-size: 96px;
+    font-size: 16px;
     font-weight: bold;
+    @include sm {
+      font-size: 24px;
+    }
+    @include lg {
+      margin-top: 50px;
+      margin-bottom: 15px;
+      font-size: 124px;
+    }
+    @include xl {
+      margin-top: 75px;
+    }
+  }
+}
+
+.current-date {
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    @include sm {
+      font-size: 24px;
+    }
+    @include lg {
+      font-size: 36px;
+    }
   }
 }
